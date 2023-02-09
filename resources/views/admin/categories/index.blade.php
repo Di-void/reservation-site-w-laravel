@@ -35,13 +35,20 @@
                                 {{$category->name}}
                             </th>
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                <img src="{{asset('storage/categories/QBPRbyqSJFlExixfCX0ikIB1tjjbpSIgqauxv2Kg.jpg')}}" class="w-16 h-16 rounded" />
+                                <img src="{{Storage::url($category->image_path)}}" class="w-16 h-16 rounded" />
                             </th>
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{$category->description}}
                             </th>
                             <td class="px-6 py-4">
-                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                <div class="flex space-x-2">
+                                    <a href="{{route('admin.categories.edit', $category->id)}}" class="px-4 py-2 bg-green-500 hover:bg-green-700 rounded-lg text-white">Edit</a>
+                                    <form class="px-4 py-2 bg-red-500 hover:bg-red-700 rounded-lg text-white" method="POST" action="{{route('admin.categories.destroy', $category->id)}}" onsubmit="return confirm('Are you sure?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                     @endforeach
