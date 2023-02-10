@@ -19,7 +19,7 @@
                             <label for="first_name" class="block text-sm font-medium text-gray-700"> First Name </label>
                             <div class="mt-1">
                                 <input type="text" id="first_name" name="first_name"
-                                    class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
+                                    class="block w-full appearance-none bg-white border rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
                             </div>
                             @error('first_name')
                             <div class="text-sm text-red-400">{{ $message }}</div>
@@ -29,7 +29,7 @@
                             <label for="last_name" class="block text-sm font-medium text-gray-700"> Last Name </label>
                             <div class="mt-1">
                                 <input type="text" id="last_name" name="last_name"
-                                    class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
+                                    class="block w-full appearance-none bg-white border rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
                             </div>
                             @error('last_name')
                             <div class="text-sm text-red-400">{{ $message }}</div>
@@ -39,7 +39,7 @@
                             <label for="email" class="block text-sm font-medium text-gray-700"> Email </label>
                             <div class="mt-1">
                                 <input type="email" id="email" name="email"
-                                    class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
+                                    class="block w-full appearance-none bg-white border rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
                             </div>
                             @error('email')
                             <div class="text-sm text-red-400">{{ $message }}</div>
@@ -50,7 +50,7 @@
                             </label>
                             <div class="mt-1">
                                 <input type="text" id="telephone" name="telephone"
-                                    class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
+                                    class="block w-full appearance-none bg-white border  rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
                             </div>
                             @error('telephone')
                             <div class="text-sm text-red-400">{{ $message }}</div>
@@ -61,7 +61,7 @@
                                 Date </label>
                             <div class="mt-1">
                                 <input type="datetime-local" id="reservation_date" name="reservation_date"
-                                    class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
+                                    class="block w-full appearance-none bg-white border  rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
                             </div>
                             @error('reservation_date')
                             <div class="text-sm text-red-400">{{ $message }}</div>
