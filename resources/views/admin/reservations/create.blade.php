@@ -8,7 +8,8 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex m-2 p-2">
-                <a href="{{route('admin.tables.index')}}" class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Back</a>
+                <a href="{{route('admin.tables.index')}}"
+                    class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Back</a>
             </div>
             <div class="m-2 p-2 bg-slate-100 rounded">
                 <div class="space-y-8 divide-y divide-gray-200 w-1/2 mt-10">
@@ -18,7 +19,7 @@
                             <label for="first_name" class="block text-sm font-medium text-gray-700"> First Name </label>
                             <div class="mt-1">
                                 <input type="text" id="first_name" name="first_name"
-                                       class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
+                                    class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
                             </div>
                             @error('first_name')
                             <div class="text-sm text-red-400">{{ $message }}</div>
@@ -28,7 +29,7 @@
                             <label for="last_name" class="block text-sm font-medium text-gray-700"> Last Name </label>
                             <div class="mt-1">
                                 <input type="text" id="last_name" name="last_name"
-                                       class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
+                                    class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
                             </div>
                             @error('last_name')
                             <div class="text-sm text-red-400">{{ $message }}</div>
@@ -38,27 +39,29 @@
                             <label for="email" class="block text-sm font-medium text-gray-700"> Email </label>
                             <div class="mt-1">
                                 <input type="email" id="email" name="email"
-                                       class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
+                                    class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
                             </div>
                             @error('email')
                             <div class="text-sm text-red-400">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="sm:col-span-6">
-                            <label for="telephone" class="block text-sm font-medium text-gray-700"> Phone Number </label>
+                            <label for="telephone" class="block text-sm font-medium text-gray-700"> Phone Number
+                            </label>
                             <div class="mt-1">
                                 <input type="text" id="telephone" name="telephone"
-                                       class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
+                                    class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
                             </div>
                             @error('telephone')
                             <div class="text-sm text-red-400">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="sm:col-span-6">
-                            <label for="reservation_date" class="block text-sm font-medium text-gray-700"> Reservation Date </label>
+                            <label for="reservation_date" class="block text-sm font-medium text-gray-700"> Reservation
+                                Date </label>
                             <div class="mt-1">
                                 <input type="datetime-local" id="reservation_date" name="reservation_date"
-                                       class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
+                                    class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
                             </div>
                             @error('reservation_date')
                             <div class="text-sm text-red-400">{{ $message }}</div>
@@ -69,7 +72,7 @@
                             </label>
                             <div class="mt-1">
                                 <input type="number" id="guest_number" name="guest_number"
-                                       class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+                                    class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
                             </div>
                             @error('guest_number')
                             <div class="text-sm text-red-400">{{ $message }}</div>
@@ -80,14 +83,15 @@
                             <div class="mt-1">
                                 <select id="table_id" name="table_id" class="form-multiselect block w-full mt-1">
                                     @foreach($tables as $table)
-                                        <option value="{{$table->id}}">{{$table->name}}</option>
+                                    <option value="{{$table->id}}">{{$table->name}} ({{ $table->guest_number }} Guests)
+                                    </option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="mt-6 p-4">
                             <button type="submit"
-                                    class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Store</button>
+                                class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Store</button>
                         </div>
                     </form>
                 </div>
