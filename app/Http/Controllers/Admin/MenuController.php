@@ -54,7 +54,7 @@ class MenuController extends Controller
             $menu->categories()->attach($request->categories);
         }
 
-        return to_route('admin.menus.index');
+        return to_route('admin.menus.index')->with('success', 'Menu Created successfully');;
     }
 
     /**
@@ -111,7 +111,7 @@ class MenuController extends Controller
             $menu->categories()->sync($request->categories);
         }
 
-        return to_route('admin.menus.index');
+        return to_route('admin.menus.index')->with('success', 'Menu Updated successfully');;
     }
 
     /**
@@ -123,8 +123,11 @@ class MenuController extends Controller
     public function destroy(Menu $menu)
     {
         Storage::delete($menu->image_path);
+        // First detach relationship so when a menu is deleted, all categories will be deleted
+        $menu->categories()->detach();
+        // then delete
         $menu->delete();
 
-        return to_route('admin.menus.index');
+        return to_route('admin.menus.index')->with('danger', 'Menu Deleted successfully');;
     }
 }
