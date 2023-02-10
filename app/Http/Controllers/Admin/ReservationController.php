@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ReservationFormRequest;
 use App\Models\Reservation;
 use App\Models\Table;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
@@ -44,6 +45,12 @@ class ReservationController extends Controller
         $table = Table::findOrFail($request->table_id);
         if($request->guest_number > $table->guest_number) {
             return back()->with('warning', 'Please Choose the Guest Number Based on the Avalable Tables');
+        }
+        $request_date = Carbon::parse($request->reservation_date);
+        foreach ($table->reservations as $res) {
+            if($res->reservation_date->format('Y-m-d') == $request_date->format('Y-m-d')) {
+                return back()->with('warning', 'The table you chose is already reserved for that date');
+            }
         }
         Reservation::create($request->validated());
 
